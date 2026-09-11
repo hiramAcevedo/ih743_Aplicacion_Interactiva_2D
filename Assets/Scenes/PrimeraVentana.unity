@@ -2004,7 +2004,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41c34b2df0e5e4a76a9e65346b60b4d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnlaceWeb
-  direccion: https://github.com/hiramAcevedo/ih745_Aplicacion_Interactiva_2D
+  direccion: https://github.com/hiramAcevedo/ih743_Aplicacion_Interactiva_2D
 --- !u!114 &304999094
 MonoBehaviour:
   m_ObjectHideFlags: 0
