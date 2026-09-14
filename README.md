@@ -6,8 +6,9 @@ Proyecto de la unidad 2 de Optativa Abierta III, Diseño de videojuegos II (IH74
 
 - Alumno: Hiram Agustín Acevedo López.
 - Asesor: Oscar Gregorio Silva Mares.
-- NRC 215440, sección D01.
 - Editor: Unity 6000.5.9f1. Plantilla Universal 2D, con URP e Input System.
+
+Este repositorio es el proyecto de la unidad 2. Las demás unidades y el proyecto de la unidad 1 están en el [índice de proyectos de la materia](https://github.com/hiramAcevedo/ih743_Optativa_Diseno_Video_Juegos_II).
 
 ## Entregas de la unidad
 
@@ -90,4 +91,7 @@ Natalie C. (2017, 7 de julio). [Interactive book 04 Scripting Navigation](https:
 
 La fuente Liberation Sans conserva su licencia en `Assets/TextMesh Pro/Fonts/LiberationSans - OFL.txt`. Alegreya, de Juan Pablo del Peral (Huerta Tipográfica), se obtuvo de [Google Fonts](https://fonts.google.com/specimen/Alegreya) bajo la SIL Open Font License 1.1; la licencia está en `Assets/Fonts/Alegreya - OFL.txt`. Los videos se enlazan en YouTube; no se incluyen sus archivos de audio o video.
 
-[Índice de proyectos de la materia](https://github.com/hiramAcevedo/ih743_Optativa_Diseno_Video_Juegos_II).
+## Repositorios de la materia
+
+- [Índice de proyectos de IH743](https://github.com/hiramAcevedo/ih743_Optativa_Diseno_Video_Juegos_II): entregas de todas las unidades y el proyecto de la unidad 1.
+- Este repositorio: proyecto de la unidad 2, actividades 2.1 a 2.6.
