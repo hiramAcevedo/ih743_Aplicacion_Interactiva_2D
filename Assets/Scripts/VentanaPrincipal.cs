@@ -30,7 +30,7 @@ public class VentanaPrincipal : MonoBehaviour
 
     public void MostrarCreditos()
     {
-        Mostrar(2, "Hecho por Hiram", "Hiram Agustín Acevedo López\nOptativa V · Universidad de Guadalajara\n2026-B");
+        Mostrar(2, "Hecho por Hiram", "Hiram Agustín Acevedo López\nOptativa Abierta III · Universidad de Guadalajara\n2026-B");
     }
 
     private void Mostrar(int indice, string encabezado, string contenido)
