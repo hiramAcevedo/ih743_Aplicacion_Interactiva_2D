@@ -5,6 +5,7 @@ using UnityEngine;
 public class Fogata : MonoBehaviour
 {
     [SerializeField] private GameObject llama, llamaBaja, luz;
+    [SerializeField] private GameObject humo;
     [SerializeField] private GameObject[] soportes;
     [SerializeField] private TMP_Text etiquetaBoton;
     [SerializeField] private bool encendidaAlIniciar;
@@ -29,6 +30,7 @@ public class Fogata : MonoBehaviour
         llama.SetActive(encendida && !conComal);
         if (llamaBaja != null) llamaBaja.SetActive(encendida && conComal);
         if (luz != null) luz.SetActive(encendida);
+        if (humo != null) humo.SetActive(encendida);
         if (etiquetaBoton != null) etiquetaBoton.text = encendida ? "Apagar" : "Encender";
     }
 }
