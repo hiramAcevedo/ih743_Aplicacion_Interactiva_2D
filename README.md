@@ -20,18 +20,19 @@ Cada actividad continúa este mismo proyecto. Las etiquetas identifican el estad
 | 2.2. El primer escenario | "Una noche junto al fuego": escena de día y de noche, navegación entre escenas y páginas, controles anclados | [act-2.2](https://github.com/hiramAcevedo/ih743_Aplicacion_Interactiva_2D/tree/act-2.2) |
 | 2.3. Programación de botones | Objetos arrastrables con encaje, fuego controlable en ambas páginas, piedra con doble clic y control de fuentes | [act-2.3](https://github.com/hiramAcevedo/ih743_Aplicacion_Interactiva_2D/tree/act-2.3) |
 | 2.4. El bucle de juego y la animación | Cinco bucles de animación de ocho cuadros (llama, llama baja, humo, luciérnagas, halo de la piedra), máscara en la base del fuego y bucle de juego con botón Pausar | [act-2.4](https://github.com/hiramAcevedo/ih743_Aplicacion_Interactiva_2D/tree/act-2.4) |
+| 2.5. Detección de colisiones | Colisión real entre el comal y la fogata: el comal decide el estado de la llama al entrar y salir del área del fuego, con colisionadores alineados a los dibujos y sensores de Physics2D | [act-2.5](https://github.com/hiramAcevedo/ih743_Aplicacion_Interactiva_2D/tree/act-2.5) |
 
-## Vista del escenario en la actividad 2.4
+## Vista del escenario en la actividad 2.5
 
-Capturas de Game view a 1920x1080, tomadas durante la prueba de la entrega 2.4.
+Capturas de Game view a 1920x1080, tomadas durante la prueba de la entrega 2.5.
 
-![El claro, de día: la fogata encendida con el comal sobre sus apoyos, la llama baja, el humo subiendo y el botón Pausar bajo Menú](Capturas/dia.png)
+![El claro, de día: el comal sobre la fogata con la llama baja encendida y el humo subiendo](Capturas/dia.png)
 
-De día, el comal está acomodado sobre la fogata con las tortillas encima; la llama baja parpadea debajo del comal y el humo sube y se desvanece. El botón "Pausar" congela los bucles.
+De día, el comal está sobre la fogata y su presencia decide el estado del fuego: la llama baja se enciende debajo y los tres apoyos aparecen. Al retirarlo, la fogata vuelve a la llama alta.
 
 ![La fogata, de noche: la llama y el humo animados, la luz sobre el suelo, las luciérnagas parpadeando con fases distintas y el halo del chalchihuite pulsando](Capturas/noche.png)
 
-De noche, las 34 luciérnagas parpadean cada una en su momento y el halo del chalchihuite late junto a las rocas.
+De noche, las 34 luciérnagas parpadean cada una en su momento y el halo del chalchihuite late junto a las rocas. La página de noche no cambia en esta actividad.
 
 ## Abrir y probar
 
@@ -53,8 +54,9 @@ De noche, las 34 luciérnagas parpadean cada una en su momento y el halo del cha
 11. Presiona Siguiente: aparece "La fogata, de noche", con "2 / 2", la llama encendida y Siguiente desactivado. "Apagar" oculta la llama y la luz sobre el suelo y la pared; "Encender" las restaura. Haz doble clic sobre el chalchihuite para alternar su halo y arrástralo: la sombra desaparece al levantarlo. Un arrastre no cambia el brillo. Anterior regresa al día y conserva las posiciones y el fuego de esa página; Menú vuelve a PrimeraVentana.
 12. Con el fuego encendido, observa la fogata: la llama cambia de forma unas doce veces por segundo y el humo sube en bocanadas que se desvanecen. Con el comal puesto, la llama baja parpadea debajo del comal. De noche, las luciérnagas parpadean cada una a su ritmo y el halo del chalchihuite pulsa. Cada bucle recorre ocho cuadros y vuelve al primero sin salto.
 13. Presiona "Pausar", bajo "Menú": todos los bucles se congelan en su cuadro actual y el humo deja de mecerse; el botón pasa a "Reanudar". En pausa el arrastre y los demás botones siguen funcionando. "Reanudar" vuelve a poner todo en marcha. La pausa se conserva al cambiar de página.
-14. En Game view, prueba 1920x1080, 1024x768 y 900x1200. Se pueden añadir desde el botón "+" del selector de resolución, con Type = Fixed Resolution. Revisa ambas páginas y los tres botones de fuente en sus extremos. El fondo debe cubrir la vista y los textos y controles deben permanecer dentro de la ventana, sin superponerse. En vertical se recorta parte del paisaje lateral; el jacal y la fogata permanecen visibles.
-15. Presiona Play de nuevo para detener la ejecución.
+14. Arrastra el comal y suéltalo fuera de la fogata: la llama sigue alta y los apoyos no aparecen. Acércalo al círculo de piedras: en cuanto su caja entra en el área del fuego, aunque no lo hayas soltado, la llama se vuelve baja y aparecen los tres apoyos; al soltarlo, el comal se acomoda sobre ellos. Retíralo y todo vuelve a como estaba. Ese cambio lo decide la colisión, no la posición del puntero: el área del fuego es un sensor invisible dentro de la llama, y el comal lleva su propio cuerpo y su colisionador. El botón "Encender" y "Apagar" sigue funcionando igual, y las tortillas siguen encajando en el comal como antes.
+15. En Game view, prueba 1920x1080, 1024x768 y 900x1200. Se pueden añadir desde el botón "+" del selector de resolución, con Type = Fixed Resolution. Revisa ambas páginas y los tres botones de fuente en sus extremos. El fondo debe cubrir la vista y los textos y controles deben permanecer dentro de la ventana, sin superponerse. En vertical se recorta parte del paisaje lateral; el jacal y la fogata permanecen visibles.
+16. Presiona Play de nuevo para detener la ejecución.
 
 ## Organización
 
@@ -66,8 +68,9 @@ De noche, las 34 luciérnagas parpadean cada una en su momento y el halo del cha
 - `Assets/Scripts/Paginas.cs`: alternancia de páginas, indicador y límites de navegación.
 - `Assets/Scripts/ArrastreSprite.cs`: arrastre de una imagen de UI con mouse o dedo mediante `IBeginDragHandler`, `IDragHandler` e `IEndDragHandler` (actividad 2.3). Está en el comal, las tres tortillas y el chalchihuite.
 - `Assets/Scripts/Fogata.cs`: enciende y apaga la llama y la luz desde OnClick; cambia la forma de la llama cuando el comal está colocado.
-- `Assets/Scripts/EncajeObjeto.cs`: acomoda el comal en la fogata y las tortillas en el comal, con arrastre libre fuera de esas zonas.
+- `Assets/Scripts/EncajeObjeto.cs`: acomoda el comal en la fogata y las tortillas en el comal. En el comal la condición es la colisión con el área del fuego; en las tortillas sigue siendo su zona de encaje.
 - `Assets/Scripts/BrilloPiedra.cs`: alterna el halo por doble clic y retira la sombra al arrastrar.
+- `Assets/Scripts/ColisionComal.cs`: el comal contra el área de la fogata (actividad 2.5). Detecta la entrada y la salida con `OnTriggerEnter2D` y `OnTriggerExit2D`, avisa a `Fogata` para que cambie la forma de la llama y ajusta el tamaño de los dos colisionadores al de su imagen cuando cambia la proporción de la pantalla.
 - `Assets/Scripts/BucleEscena.cs`: el bucle de juego (actividad 2.4). En `Update` varía la velocidad de las llamas con ruido, mece el humo y controla la pausa; "Pausar" y "Reanudar" lo llaman desde OnClick.
 - `Assets/Scripts/Luciernaga.cs`: al activarse, arranca la animación de cada luciérnaga en una fase distinta, para que no parpadeen al unísono.
 - `Assets/Animaciones/`: un clip y un controlador por bucle (Llama, LlamaBaja, Humo, Luciernaga, HaloPiedra), cada clip con ocho keys de sprite y Loop Time.
@@ -89,6 +92,10 @@ Cada bucle de animación es un `AnimationClip` que cambia el sprite de una image
 
 El bucle de juego es `BucleEscena.cs`: cada cuadro acumula el tiempo de la escena, modula la velocidad de las llamas entre 0.85 y 1.15 con ruido Perlin (por eso el fuego no parpadea con regularidad mecánica) y desplaza el humo con una senoide. La pausa pone a cero la velocidad de todos los Animators y congela el vaivén sin tocar `Time.timeScale`, de modo que la interfaz sigue respondiendo.
 
+La detección de colisiones usa el motor de física en dos dimensiones sobre la interfaz: el comal lleva un cuerpo cinemático sin gravedad y un colisionador de caja marcado como sensor, y la fogata un área con su propio cuerpo estático. Al entrar y salir, Unity llama a `OnTriggerEnter2D` y `OnTriggerExit2D`, y ese aviso es el que cambia el estado del fuego. El resto del escenario no tiene física: el arrastre sigue moviendo las anclas del rectángulo, y el sensor solo mira si las dos cajas se tocan.
+
+El colisionador del comal coincide con su dibujo y el área del fuego es un núcleo del tamaño de la llama, no el círculo de piedras: si abarcara todo el fuego, el comal en su posición inicial ya lo tocaría y la fogata arrancaría con la llama baja. Los dos tamaños se recalculan desde el rectángulo de cada imagen, porque las anclas son proporcionales al fondo y la proporción de la pantalla cambia ese rectángulo. Así la caja sigue pegada al dibujo en 1920x1080, en 1024x768 y en 900x1200.
+
 Se versionan `Assets`, `Packages` y `ProjectSettings`, incluidos los archivos `.meta`. `Library`, `Temp`, `Logs`, `UserSettings` y compilaciones quedan fuera por el `.gitignore`.
 
 ## Material consultado
@@ -100,6 +107,8 @@ Natalie C. (2017, 14 de julio). [Interactive book 02 Aspect ratio and Artwork](h
 Natalie C. (2017, 7 de julio). [Interactive book 04 Scripting Navigation](https://www.youtube.com/watch?v=4M9zbOhBYUk) y (2017, 28 de julio) [Interactive Book5 dragging a sprite](https://www.youtube.com/watch?v=vA63AYdV2Os). Se aplican los scripts pegados a objetos y llamados desde OnClick, y las interfaces de arrastre del EventSystem. La conversión de coordenadas se adapta a un Canvas en Screen Space Overlay.
 
 Natalie C. (2017, 28 de julio). [Interactive book 6 Loop Animation](https://www.youtube.com/watch?v=2eB3Nq9f2OY) y (2017, 27 de julio) [Interactive Book 07 masking](https://www.youtube.com/watch?v=jv4eMPMQc9k). Se aplican el clip de animación por keys de sprite con Loop Time y la máscara que recorta la base de las llamas. Los clips se generan por script del editor con el mismo resultado que la ventana Animation.
+
+Natalie C. (2017, 27 de julio). [Interactive Book 08 Collision detection](https://www.youtube.com/watch?v=0SpFBVV0WAo). Se aplica el cuerpo sin gravedad con su colisionador de caja, el sensor en el objeto que se arrastra y el del área que lo recibe, y la comprobación en consola de que las áreas se están tocando.
 
 La fuente Liberation Sans conserva su licencia en `Assets/TextMesh Pro/Fonts/LiberationSans - OFL.txt`. Alegreya, de Juan Pablo del Peral (Huerta Tipográfica), se obtuvo de [Google Fonts](https://fonts.google.com/specimen/Alegreya) bajo la SIL Open Font License 1.1; la licencia está en `Assets/Fonts/Alegreya - OFL.txt`. Los videos se enlazan en YouTube; no se incluyen sus archivos de audio o video.
 
